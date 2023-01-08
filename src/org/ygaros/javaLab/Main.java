@@ -3,6 +3,7 @@ package org.ygaros.javaLab;
 import org.ygaros.javaLab.creatures.Animal;
 import org.ygaros.javaLab.creatures.Pet;
 import org.ygaros.javaLab.devices.Car;
+import org.ygaros.javaLab.devices.LPG;
 
 public class Main {
 
@@ -18,7 +19,7 @@ public class Main {
                 25000d
         );
         andrzej.setCash(100000d);
-        Car honda = new Car("civic", "honda", 1500d);
+        Car honda = new LPG("civic", "honda", 1500d);
         for (int i = 0; i < 50; i++) {
             hum.animal.feed();
         }

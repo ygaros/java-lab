@@ -4,14 +4,14 @@ import org.ygaros.javaLab.Human;
 
 import java.util.Objects;
 
-public class Car extends Device{
+public abstract class Car extends Device{
     Double value;
 
     public Car(String model, String producer, Double value) {
         super(model, producer);
         this.value = value;
     }
-
+    public abstract void refuel();
     @Override
     public void turnOn() {
         System.out.println("wrrrrr!");
