@@ -17,6 +17,7 @@ public class Main {
         for (int i = 0; i < 200; i++) {
             hum.animal.takeForAWalk();
         }
+        honda.turnOn();
         hum.animal.feed();
         hum.getSalary();
         hum.setSalary(3000d);

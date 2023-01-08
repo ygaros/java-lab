@@ -1,15 +1,16 @@
 package org.ygaros.javaLab.devices;
 
-public class Car {
-    final String model;
-    final String producer;
-
+public class Car extends Device{
     Double value;
 
     public Car(String model, String producer, Double value) {
-        this.model = model;
-        this.producer = producer;
+        super(model, producer);
         this.value = value;
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("wrrrrr!");
     }
 
     @Override
