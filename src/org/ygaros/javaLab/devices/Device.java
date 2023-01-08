@@ -1,6 +1,9 @@
 package org.ygaros.javaLab.devices;
 
-public abstract class Device {
+import org.ygaros.javaLab.Human;
+import org.ygaros.javaLab.Sellable;
+
+public abstract class Device implements Sellable {
     final String model;
     final String producer;
 

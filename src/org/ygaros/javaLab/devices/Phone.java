@@ -1,5 +1,7 @@
 package org.ygaros.javaLab.devices;
 
+import org.ygaros.javaLab.Human;
+
 public class Phone extends Device{
 
     public Phone(String model, String producer) {
@@ -17,5 +19,10 @@ public class Phone extends Device{
                 "model='" + model + '\'' +
                 ", producer='" + producer + '\'' +
                 '}';
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        //TODO to be implemented
     }
 }

@@ -12,9 +12,12 @@ public class Human {
     private Car car;
     Double salary;
 
+    Double cash;
+
     public Human(Animal animal, String name, Double salary) {
         this.animal = animal;
         this.name = name;
+        this.cash = 0d;
         this.salary = salary;
     }
 
@@ -36,6 +39,10 @@ public class Human {
     }
 
     public void setCar(Car car) {
+        if(car == null){
+            this.car = null;
+            return;
+        }
         if(this.salary > car.getValue()){
             System.out.println("Udalo sie kupic za gotowke");
             this.car = car;
@@ -46,6 +53,22 @@ public class Human {
             System.out.println("Zapisz sie na studia i znajdz nowa robote " +
                     "albo idz po podwyzke");
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
     }
 
     public Car getCar() {
