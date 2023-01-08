@@ -9,8 +9,8 @@ public class Phone extends Device{
     private static final String DEFAULT_LATEST_VERSION = "latest-stable";
     private static final String DEFAULT_APP_SERVER = "https://my.default.server.com";
 
-    public Phone(String model, String producer) {
-        super(model, producer);
+    public Phone(String model, String producer, Double value) {
+        super(model, producer, value);
     }
 
     @Override

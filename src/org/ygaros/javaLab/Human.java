@@ -5,12 +5,14 @@ import org.ygaros.javaLab.devices.Car;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class Human {
+    private static final int DEFAULT_GARAGE_SIZE = 2;
     Animal animal;
     String name;
 
-    private Car car;
+    private Car[] garage;
     Double salary;
 
     Double cash;
@@ -19,6 +21,14 @@ public class Human {
         this.animal = animal;
         this.name = name;
         this.cash = 0d;
+        this.garage = new Car[DEFAULT_GARAGE_SIZE];
+        this.salary = salary;
+    }
+
+    public Human(Animal animal, String name, int garageSize, Double salary) {
+        this.animal = animal;
+        this.name = name;
+        this.garage = new Car[garageSize];
         this.salary = salary;
     }
 
@@ -39,21 +49,42 @@ public class Human {
         this.salary = salary;
     }
 
-    public void setCar(Car car) {
+    public void setCar(Car car, int parkingSpot) {
         if(car == null){
-            this.car = null;
+            this.garage = null;
             return;
         }
         if(this.salary > car.getValue()){
             System.out.println("Udalo sie kupic za gotowke");
-            this.car = car;
+            this.garage[parkingSpot] = car;
         }else if (this.salary > car.getValue() / 12){
             System.out.println("Udalo sie kupic na kredyt");
-            this.car = car;
+            this.garage[parkingSpot] = car;
         }else{
             System.out.println("Zapisz sie na studia i znajdz nowa robote " +
                     "albo idz po podwyzke");
         }
+    }
+    public int getFirstFreeSpotInGarage(){
+        for (int i = 0; i < this.garage.length; i++) {
+            Car car = this.garage[i];
+            if (car == null){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void removeCar(Car old){
+        for (int i = 0; i < this.garage.length; i++) {
+            Car car = this.garage[i];
+            if (car == old){
+                this.garage[i] = null;
+                return;
+            }
+        }
+    }
+    public Car getCar(int parkingSpot){
+        return this.garage[parkingSpot];
     }
 
     public String getName() {
@@ -72,8 +103,8 @@ public class Human {
         this.cash = cash;
     }
 
-    public Car getCar() {
-        return car;
+    public Car[] getGarage() {
+        return garage;
     }
 
     void feedAnimal(){
@@ -88,7 +119,7 @@ public class Human {
         return "Human{" +
                 "animal=" + animal +
                 ", name='" + name + '\'' +
-                ", car=" + car +
+                ", car=" + garage +
                 ", salary=" + salary +
                 '}';
     }

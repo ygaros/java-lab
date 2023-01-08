@@ -7,9 +7,12 @@ public abstract class Device implements Sellable {
     final String model;
     final String producer;
 
-    public Device(String model, String producer) {
+    Double value;
+
+    public Device(String model, String producer, Double value) {
         this.model = model;
         this.producer = producer;
+        this.value = value;
     }
 
     public abstract void turnOn();

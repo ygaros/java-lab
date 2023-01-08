@@ -1,6 +1,5 @@
 package org.ygaros.javaLab;
 
-import org.ygaros.javaLab.creatures.Animal;
 import org.ygaros.javaLab.creatures.Pet;
 import org.ygaros.javaLab.devices.Car;
 import org.ygaros.javaLab.devices.LPG;
@@ -34,13 +33,13 @@ public class Main {
         hum.getSalary();
         hum.setSalary(3000d);
         hum.getSalary();
-        hum.setCar(honda);
-        hum.getCar().sell(hum, andrzej, 2000d);
+        hum.setCar(honda, 0);
+        hum.getGarage()[0].sell(hum, andrzej, 2000d);
         System.out.println(hum.toString());
         System.out.println(hum.animal.toString());
         System.out.println(honda.toString());
 
-        Phone xiaomi = new Phone("a9", "xiaomi");
+        Phone xiaomi = new Phone("a9", "xiaomi", 500d);
         xiaomi.installAnApp(List.of("facebook", "insta", "race game"));
     }
 }
