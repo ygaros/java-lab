@@ -31,4 +31,14 @@ public class Animal {
             this.isAlive = this.weight > 0;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "weight=" + weight +
+                ", species='" + species + '\'' +
+                ", isAlive=" + isAlive +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

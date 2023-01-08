@@ -1,7 +1,7 @@
 package org.ygaros.javaLab;
 
-import java.sql.SQLOutput;
-import java.time.LocalDate;
+import org.ygaros.javaLab.devices.Car;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -36,10 +36,10 @@ public class Human {
     }
 
     public void setCar(Car car) {
-        if(this.salary > car.value){
+        if(this.salary > car.getValue()){
             System.out.println("Udalo sie kupic za gotowke");
             this.car = car;
-        }else if (this.salary > car.value / 12){
+        }else if (this.salary > car.getValue() / 12){
             System.out.println("Udalo sie kupic na kredyt");
             this.car = car;
         }else{
@@ -57,5 +57,15 @@ public class Human {
     }
     void takeAnimalForAWalk(){
         this.animal.takeForAWalk();
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "animal=" + animal +
+                ", name='" + name + '\'' +
+                ", car=" + car +
+                ", salary=" + salary +
+                '}';
     }
 }

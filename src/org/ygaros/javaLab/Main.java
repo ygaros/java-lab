@@ -1,5 +1,7 @@
 package org.ygaros.javaLab;
 
+import org.ygaros.javaLab.devices.Car;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -8,6 +10,7 @@ public class Main {
                 "franek",
                 2000d
         );
+        Car honda = new Car("civic", "honda", 1500d);
         for (int i = 0; i < 50; i++) {
             hum.animal.feed();
         }
@@ -16,8 +19,12 @@ public class Main {
         }
         hum.animal.feed();
         hum.getSalary();
-        hum.setSalary(1d);
+        hum.setSalary(3000d);
         hum.getSalary();
+        hum.setCar(honda);
+        System.out.println(hum.toString());
+        System.out.println(hum.animal.toString());
+        System.out.println(honda.toString());
     }
 }
 
