@@ -4,6 +4,9 @@ import org.ygaros.javaLab.creatures.Animal;
 import org.ygaros.javaLab.creatures.Pet;
 import org.ygaros.javaLab.devices.Car;
 import org.ygaros.javaLab.devices.LPG;
+import org.ygaros.javaLab.devices.Phone;
+
+import java.util.List;
 
 public class Main {
 
@@ -36,6 +39,9 @@ public class Main {
         System.out.println(hum.toString());
         System.out.println(hum.animal.toString());
         System.out.println(honda.toString());
+
+        Phone xiaomi = new Phone("a9", "xiaomi");
+        xiaomi.installAnApp(List.of("facebook", "insta", "race game"));
     }
 }
 
