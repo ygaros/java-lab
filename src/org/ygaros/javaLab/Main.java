@@ -1,6 +1,7 @@
 package org.ygaros.javaLab;
 
 import org.ygaros.javaLab.creatures.Pet;
+import org.ygaros.javaLab.devices.Application;
 import org.ygaros.javaLab.devices.Car;
 import org.ygaros.javaLab.devices.LPG;
 import org.ygaros.javaLab.devices.Phone;
@@ -41,7 +42,17 @@ public class Main {
         System.out.println(honda.toString());
 
         Phone xiaomi = new Phone("a9", "xiaomi", 500d);
-        xiaomi.installAnApp(List.of("facebook", "insta", "race game"));
+        List<Application> apps = List.of(
+                new Application("insta", "lastest", 0d),
+                new Application("facebok", "lastest", 0d),
+                new Application("racegame", "lastest", 0d),
+                new Application("expensivegame", "lastest", 10d),
+                new Application("moreexpensicegame", "lastest", 110d)
+        );
+        xiaomi.installAnApp(andrzej, apps.toArray(new Application[]{}));
+        xiaomi.showAppNamesInPriceOrderDesc();
+        xiaomi.showAppNamesInAlphabeticOrder();
+        xiaomi.showAllFreeApps();
     }
 }
 
