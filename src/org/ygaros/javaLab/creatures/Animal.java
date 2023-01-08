@@ -1,6 +1,7 @@
-package org.ygaros.javaLab;
+package org.ygaros.javaLab.creatures;
 
-public class Animal {
+public abstract class Animal implements Feedable{
+    private final static Double DEFAULT_FOOD_WEIGHT = 2d;
     Double weight;
     String species;
     Boolean isAlive;
@@ -13,16 +14,22 @@ public class Animal {
         this.isAlive = weight > 0;
     }
 
-    void feed(){
+    @Override
+    public void feed(){
+        this.feed(DEFAULT_FOOD_WEIGHT);
+    }
+
+    @Override
+    public void feed(Double foodWeight){
         if(!this.isAlive) {
             System.out.println("Are you insane?");
             return;
         }
-        this.weight += 2;
+        this.weight += foodWeight;
         System.out.println("Thanks for food!");
     }
 
-    void takeForAWalk(){
+    public void takeForAWalk(){
         if(this.weight <= 0){
             System.out.println("Are you insane?");
         }else{

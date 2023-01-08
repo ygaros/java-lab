@@ -1,17 +1,19 @@
 package org.ygaros.javaLab;
 
+import org.ygaros.javaLab.creatures.Animal;
+import org.ygaros.javaLab.creatures.Pet;
 import org.ygaros.javaLab.devices.Car;
 
 public class Main {
 
     public static void main(String[] args) {
         Human hum = new Human(
-                new Animal(125d, "dog", "burek"),
+                new Pet(125d, "dog", "burek"),
                 "franek",
                 2000d
         );
         Human andrzej = new Human(
-                new Animal(100d, "cat", "mialek"),
+                new Pet(100d, "cat", "mialek"),
                 "andrzej",
                 25000d
         );

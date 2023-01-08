@@ -1,5 +1,6 @@
 package org.ygaros.javaLab;
 
+import org.ygaros.javaLab.creatures.Animal;
 import org.ygaros.javaLab.devices.Car;
 
 import java.time.LocalDateTime;
