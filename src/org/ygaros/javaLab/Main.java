@@ -5,7 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Human hum = new Human(
                 new Animal(125d, "dog", "burek"),
-                "franek"
+                "franek",
+                new Car("Civic", "Honda")
         );
         for (int i = 0; i < 50; i++) {
             hum.animal.feed();
