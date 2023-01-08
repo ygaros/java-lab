@@ -6,7 +6,8 @@ public class Main {
         Human hum = new Human(
                 new Animal(125d, "dog", "burek"),
                 "franek",
-                new Car("Civic", "Honda")
+                new Car("Civic", "Honda"),
+                2000d
         );
         for (int i = 0; i < 50; i++) {
             hum.animal.feed();
@@ -15,5 +16,9 @@ public class Main {
             hum.animal.takeForAWalk();
         }
         hum.animal.feed();
+        hum.getSalary();
+        hum.setSalary(1d);
+        hum.getSalary();
     }
 }
+
