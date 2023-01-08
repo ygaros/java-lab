@@ -34,6 +34,7 @@ public class Main {
         hum.setSalary(3000d);
         hum.getSalary();
         hum.setCar(honda, 0);
+        honda.owners.add(hum);
         hum.getGarage()[0].sell(hum, andrzej, 2000d);
         System.out.println(hum.toString());
         System.out.println(hum.animal.toString());

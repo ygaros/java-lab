@@ -6,6 +6,8 @@ import org.ygaros.javaLab.devices.Car;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Human {
     private static final int DEFAULT_GARAGE_SIZE = 2;
@@ -122,5 +124,20 @@ public class Human {
                 ", car=" + garage +
                 ", salary=" + salary +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return Objects.equals(animal, human.animal) && Objects.equals(name, human.name) && Arrays.equals(garage, human.garage) && Objects.equals(salary, human.salary) && Objects.equals(cash, human.cash);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(animal, name, salary, cash);
+        result = 31 * result + Arrays.hashCode(garage);
+        return result;
     }
 }
