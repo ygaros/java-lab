@@ -9,13 +9,12 @@ public class Human {
     Animal animal;
     String name;
 
-    Car car;
+    private Car car;
     Double salary;
 
-    public Human(Animal animal, String name, Car car, Double salary) {
+    public Human(Animal animal, String name, Double salary) {
         this.animal = animal;
         this.name = name;
-        this.car = car;
         this.salary = salary;
     }
 
@@ -34,6 +33,23 @@ public class Human {
         System.out.println("Koniecznie potrzeba odebrac aneks do umowy od Pani Hani z kadr");
         System.out.println("ZUS i US juz wiedza o zmianie wyplaty i nie ma sensu ukywac dochodu");
         this.salary = salary;
+    }
+
+    public void setCar(Car car) {
+        if(this.salary > car.value){
+            System.out.println("Udalo sie kupic za gotowke");
+            this.car = car;
+        }else if (this.salary > car.value / 12){
+            System.out.println("Udalo sie kupic na kredyt");
+            this.car = car;
+        }else{
+            System.out.println("Zapisz sie na studia i znajdz nowa robote " +
+                    "albo idz po podwyzke");
+        }
+    }
+
+    public Car getCar() {
+        return car;
     }
 
     void feedAnimal(){
